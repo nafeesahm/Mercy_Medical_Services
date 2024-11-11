@@ -1,47 +1,41 @@
-// Function to update the current time
-        function updateTime() {
-            const currentDate = new Date();
-            const hours = currentDate.getHours();
-            const minutes = currentDate.getMinutes();
-            const seconds = currentDate.getSeconds();
 
-            // Format the time to ensure two digits for minutes and seconds
-            const formattedTime = `${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    // JavaScript to create and animate stars
+    const starfield = document.getElementById("starfield");
 
-            // Display the current time in the div with id 'time'
-            document.getElementById("time").innerText = formattedTime;
-        }
+    // Function to create a random number within a given range
+    function getRandom(min, max) {
+      return Math.random() * (max - min) + min;
+    }
 
-        // Call the updateTime function every second (1000 ms)
-        setInterval(updateTime, 1000);
+    // Function to create stars
+    function createStar() {
+      const star = document.createElement("div");
+      star.classList.add("star");
 
+      // Assign random size to the star
+      const size = getRandom(2, 6);  // Size between 2px and 6px
+      if (size < 3) {
+        star.classList.add("small");
+      } else if (size < 5) {
+        star.classList.add("medium");
+      } else {
+        star.classList.add("large");
+      }
 
+      // Assign random position to the star
+      star.style.top = getRandom(0, 100) + "%";
+      star.style.left = getRandom(0, 100) + "%";
 
+      // Append the star to the starfield container
+      starfield.appendChild(star);
 
+      // Make the star twinkle by changing its opacity
+      setInterval(() => {
+        star.style.opacity = getRandom(0.4, 1);
+      }, getRandom(1000, 3000));  // Randomize twinkle speed (between 1s to 3s)
+    }
 
-        function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble');
-            
-            // Set random size and position for each bubble
-            const size = Math.random() * 50 + 10;  // Bubble size between 10px and 60px
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.left = `${Math.random() * 100}vw`;  // Random horizontal position
-            
-            // Set random animation duration and delay
-            bubble.style.animationDuration = `${Math.random() * 3 + 2}s`;  // Duration between 2s and 5s
-            bubble.style.animationDelay = `${Math.random() * 2}s`;  // Delay between 0s and 2s
-    
-            // Append bubble to the body
-            document.body.appendChild(bubble);
-    
-            // Remove bubble when animation ends
-            bubble.addEventListener('animationend', () => {
-                bubble.remove();
-            });
-        }
-    
-        // Create bubbles at intervals
-        setInterval(createBubble, 300);  // Creates a new bubble every 300ms
-    
+    // Create multiple stars
+    for (let i = 0; i < 200; i++) {
+      createStar();
+    }
