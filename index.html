@@ -1,412 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/mystyle.css">
-    <script src="./js/myScript.js"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <title>Mercy Medical Services</title>
-    <style>
-        body {
-          background-image: url('/img/background_image.jpeg');
-          background-position: top; /* Optional: Centers the background image */
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/mystyle.css">
+        <script src="./js/myScript.js"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        <title>Mercy Medical Services</title>
+        <style>
+            body {
+            background-image: url('/img/background_image.jpeg');
+            background-position: top; /* Optional: Centers the background image */
+            }
 
-    </style>  
-  </head>  
+        </style>  
+    </head>  
 
-  <body>  
+    <body>  
 
-    <!-- Header with Navbar -->
-    <header class="bg-primary text-white py-3">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="index.html">Mercy Medical Services</a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <!-- Search Box in Navbar -->
-                    <form class="d-flex ms-auto">
-                        <input class="form-control me-2" type="search" id="goto-search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+        <!-- Header with Navbar -->
+        <header class="bg-primary text-white py-3">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <a class="navbar-brand" href="index.html">Mercy Medical Services</a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Search Box in Navbar -->
+                        <form class="d-flex ms-auto">
+                            <input class="form-control me-2" type="search" id="goto-search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
+                        </ul>
+                        <div class="spinner-grow" role="status" style="margin-right: 10px;">
+                            <span class="visually-hidden">Mercy...</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section bg-light text-center py-5">
+            <div class="container">
+                <h1 class="display-4">Welcome to Mercy Medical Services</h1>
+                <p class="lead" id="hero-title">Compassionate Care, World-Class Expertise</p>
+                <p id="hero-subtitle">Your Trusted Healthcare Destination in India</p>
+                <a href="#services" class="btn btn-primary btn-lg mt-3">Explore Our Services</a>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <main class="container my-5" style="color: whitesmoke;">
+            <h1>Mercy Medical Services</h1>
+            <p>Your Health, Our Priority</p>
     
-    <!-- Main Content Section -->
-    <main class="container my-5" style="color: whitesmoke;">
-      <h1>Mercy Medical Services</h1>
-      <p>Your Health, Our Priority</p>
-
-      <!-- carousel with three slides -->
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="2000">
-            <img src="./img/Pic_6.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="./img/Pic_2.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="./img/Pic_7.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="./img/Pic_9.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="./img/Pic_8.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
-          </div>                             
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-      <!--building block of a card-->
-      <div class="card">
-        <div class="spinner-grow" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="card-body" align="center" style="margin-top: -40px;">
-            Mercy Medical Services provides a comprehensive range of medical specialties to meet the diverse needs of our patients. From emergency care to specialized treatments, we offer world-class services across:
-        </div>
-      </div>
-
-    </main>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section bg-light text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Welcome to Mercy Medical Services</h1>
-            <p class="lead" id="hero-title">Compassionate Care, World-Class Expertise</p>
-            <p id="hero-subtitle">Your Trusted Healthcare Destination in India</p>
-            <a href="#services" class="btn btn-primary btn-lg mt-3">Explore Our Services</a>
-        </div>
-    </section>
-
-    <div class="card mb-3" style="width: auto;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="./img/Mercy-Logo.jpg" class="img-fluid rounded-start" style="margin-top: 20px;" alt="Loading...">
+            <!-- carousel with three slides -->
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Medical Services in New Delhi</h5>
-                    <h6 class="card-subtitle mb-3 text-body-secondary">India's top multi-specialty healthcare provider dedicated to excellence in medical care.</h6>
-                    <p class="card-text">Mercy Medical Services, located in New Delhi, is a pioneering healthcare institution—the first in India to be recognized as an internationally accredited medical services provider. Ranked as the No. 1 multi-specialty tertiary acute care provider in India, Mercy Medical Services combines advanced medical expertise with compassionate patient care, making it one of the most sought-after destinations for quality healthcare delivery in India and beyond. <br><br>Our comprehensive services span multiple specialties, including advanced cardiology, neurology, orthopedics, oncology, and more, all delivered by a team of renowned healthcare professionals. With cutting-edge facilities and a commitment to global standards, we are dedicated to providing world-class treatment and ensuring each patient receives the highest standard of care.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                <img src="./img/Pic_6.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img src="./img/Pic_2.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img src="./img/Pic_7.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img src="./img/Pic_9.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img src="./img/Pic_8.jpg" class="d-block w-100" style="height: 500px;" alt="Loading...">
+                </div>                             
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+    
+            <!--building block of a card-->
+            <div class="card">
+            <div class="card-body" align="center">
+                Mercy Medical Services provides a comprehensive range of medical specialties to meet the diverse needs of our patients. From emergency care to specialized treatments, we offer world-class services across:
+            </div>
+            </div>
+    
+        </main>    
+
+        <div class="card mb-0" style="width: auto;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./img/Mercy-Logo.jpg" class="img-fluid rounded-start" style="margin-top: 20px;" alt="Loading...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">Medical Services in New Delhi</h4>
+                        <h6 class="card-subtitle mb-3 text-body-secondary">India's top multi-specialty healthcare provider dedicated to excellence in medical care.</h6>
+                        <p class="card-text">Mercy Medical Services, located in New Delhi, is a pioneering healthcare institution—the first in India to be recognized as an internationally accredited medical services provider. Ranked as the No. 1 multi-specialty tertiary acute care provider in India, Mercy Medical Services combines advanced medical expertise with compassionate patient care, making it one of the most sought-after destinations for quality healthcare delivery in India and beyond. <br><br>Our comprehensive services span multiple specialties, including advanced cardiology, neurology, orthopedics, oncology, and more, all delivered by a team of renowned healthcare professionals. With cutting-edge facilities and a commitment to global standards, we are dedicated to providing world-class treatment and ensuring each patient receives the highest standard of care.</p>
+                        <a href="#" style="text-decoration: none;" class="card-link">Profile</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-dark py-5">
-        <div class="container">
-            <h2 class="text-center mb-4" style="color: white;"><u>Our Services</u></h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card service-card">
-                        <img src="./img/Pic_3.jpg" class="card-img-top" alt="Cardiology">
-                        <div class="card-body">
-                            <h5 class="card-title">Cardiology</h5>
-                            <p class="card-text">Advanced cardiac care with state-of-the-art technology.</p>
-                            <span>Learn more about our specialized heart care and treatments</span>
+        <!-- Services Section -->
+        <section id="services" class="bg-dark py-5">
+            <div class="container">
+                <h2 class="text-center mb-4" style="color: white; font-family: 'Lucida Sans';">Our Services</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img src="./img/Pic_3.jpg" class="card-img-top" alt="Cardiology">
+                            <div class="card-body">
+                                <h5 class="card-title">Cardiology</h5>
+                                <p class="card-text">Advanced cardiac care with state-of-the-art technology.</p>
+                                <span>Learn more about our specialized heart care and treatments</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img src="./img/Pic_4.jpg" class="card-img-top" alt="Neurology">
+                            <div class="card-body">
+                                <h5 class="card-title">Neurology</h5>
+                                <p class="card-text">Comprehensive treatment for neurological conditions.</p>
+                                <span>Discover advanced neurological treatments for all ages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img src="./img/Pic_1.jpg" class="card-img-top" alt="Orthopedics">
+                            <div class="card-body">
+                                <h5 class="card-title">Orthopedics</h5>
+                                <p class="card-text">Expert orthopedic care for all age groups.</p>
+                                <span>Comprehensive orthopedic solutions for injuries and joint care</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card service-card">
-                        <img src="./img/Pic_4.jpg" class="card-img-top" alt="Neurology">
+            </div>
+        </section>
+
+        <div class="container bg-dark py-5">
+            <div class="row row-cols-1 row-cols-md-2 g-4" style="width: auto;">
+                <div class="col">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Neurology</h5>
-                            <p class="card-text">Comprehensive treatment for neurological conditions.</p>
-                            <span>Discover advanced neurological treatments for all ages</span>
+                            <h5 class="card-title">Pediatrics</h5>
+                            <p class="card-text"><span class="hover-text">Comprehensive care for children, from routine check-ups to treatment for chronic illnesses and developmental support.</span></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card service-card">
-                        <img src="./img/Pic_1.jpg" class="card-img-top" alt="Orthopedics">
+                <div class="col">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Orthopedics</h5>
-                            <p class="card-text">Expert orthopedic care for all age groups.</p>
-                            <span>Comprehensive orthopedic solutions for injuries and joint care</span>
+                            <h5 class="card-title">Oncology</h5>
+                            <p class="card-text"><span class="hover-text">Offering chemotherapy, radiation therapy, and personalized cancer care with a focus on holistic healing.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gynecology & Obstetrics</h5>
+                            <p class="card-text"><span class="hover-text">Comprehensive care for women's health, from routine exams to advanced reproductive health treatments.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Orthopedics & Sports Medicine</h5>
+                            <p class="card-text"><span class="hover-text">Joint replacements, sports injury treatments, and pain management to enhance mobility and recovery.</span></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <div class="container bg-dark py-5">
-        <div class="row row-cols-1 row-cols-md-2 g-4" style="width: auto;">
-            <div class="col">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Pediatrics</h5>
-                        <p class="card-text"><span class="hover-text">Comprehensive care for children, from routine check-ups to treatment for chronic illnesses and developmental support.</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Oncology</h5>
-                        <p class="card-text"><span class="hover-text">Offering chemotherapy, radiation therapy, and personalized cancer care with a focus on holistic healing.</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Gynecology & Obstetrics</h5>
-                        <p class="card-text"><span class="hover-text">Comprehensive care for women's health, from routine exams to advanced reproductive health treatments.</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Orthopedics & Sports Medicine</h5>
-                        <p class="card-text"><span class="hover-text">Joint replacements, sports injury treatments, and pain management to enhance mobility and recovery.</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Patient Information Section -->
-    <section id="patient-info" class="bg-dark py-5" style="color: white;">
-        <div class="container">
-            <h2 class="section-title">Patient Information</h2>
-            <p>At Mercy Medical Services, we put your well-being at the heart of everything we do. Our facilities are designed for comfort, and our staff is here to ensure that every step of your journey is as smooth as possible.</p>
-            <ul>
-                <li>Private rooms for comfort and privacy</li>
-                <li>Comprehensive rehabilitation facilities</li>
-                <li>On-site pharmacy and diagnostic labs</li>
-                <li>In-house nutrition and dietary consultation</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Testimonials Carousel -->
-    <section id="testimonials" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="section-title mb-4">Testimonials</h2>
-            
-            <!-- Carousel -->
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- Testimonial 1 -->
-                    <div class="carousel-item active">
-                        <blockquote class="blockquote">
-                            <p class="mb-4">"Mercy Medical Services provided exceptional care and gave me peace of mind throughout my treatment. I am grateful for their support and expertise."</p>
-                            <footer class="blockquote-footer">Nafees Ahmad</footer>
-                        </blockquote>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="carousel-item">
-                        <blockquote class="blockquote">
-                            <p class="mb-4">"The doctors and staff at Mercy Medical Services went above and beyond to ensure I was comfortable. Their dedication and expertise are unmatched."</p>
-                            <footer class="blockquote-footer">Sheikh Zafar</footer>
-                        </blockquote>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="carousel-item">
-                        <blockquote class="blockquote">
-                            <p class="mb-4">"Thanks to Mercy Medical Services, I received the best care possible. I highly recommend them to anyone seeking quality medical attention."</p>
-                            <footer class="blockquote-footer">Md Saif Ali</footer>
-                        </blockquote>
-                    </div>
-                </div>
-    
-                <!-- Carousel controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Address Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Address Info...</h2>
-            <p>If you have any questions, want to book an appointment, or need more information about our services, please don’t hesitate to reach out.</p>
-            
-            <address class="text-muted fst-italic">
-                <strong>Mercy Medical Services</strong><br>
-                New Delhi, India<br>
-                <abbr title="Phone">Phone:</abbr> +91 9711-0808-02<br>
-                <a href="mailto:contact@mercymedical.in" class="text-decoration-none text-primary">contact@mercymedical.in</a>
-            </address>            
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="form-container">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <!-- HTML Form -->
-            <form action="/submit-form" method="post">
-                <!-- Name Field -->
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <!-- Email Field -->
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <!-- Phone Field -->
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-
-                <!-- Message Field -->
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
-
-  <!-- Footer Section -->
-  <footer class="bg-dark text-white text-center py-4">
-
-        <!-- About Us Section -->
-        <section id="about" class="py-5">
-            <div class="container" align="left">
-                <h2 class="section-title">About Us</h2>
-                <p>Mercy Medical Services is a premier healthcare provider in India, offering a full range of medical services to address every aspect of your health. Founded with a vision to deliver compassionate and expert care, we combine state-of-the-art technology, innovative treatments, and patient-focused care to meet the unique needs of every individual.</p>
-                <ul style="list-style-type: circle;">
-                    <li>Personalized Treatment Plans</li>
-                    <li>Patient-Centered Approach</li>
-                    <li>Advanced Technology</li>
-                    <li>Expert Team</li>
-                    
+        <!-- Patient Information Section -->
+        <section id="patient-info" class="bg-dark py-5" style="color: white;">
+            <div class="container">
+                <h2 class="section-title">Patient Information</h2>
+                <p>At Mercy Medical Services, we put your well-being at the heart of everything we do. Our facilities are designed for comfort, and our staff is here to ensure that every step of your journey is as smooth as possible.</p>
+                <ul>
+                    <li>Private rooms for comfort and privacy</li>
+                    <li>Comprehensive rehabilitation facilities</li>
+                    <li>On-site pharmacy and diagnostic labs</li>
+                    <li>In-house nutrition and dietary consultation</li>
                 </ul>
             </div>
         </section>
 
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <p class="mb-0">&copy; 2024 Mercy Medical Services. All rights reserved.</p>
-          <div>
-          <!-- Social Media Links -->
-             <!-- Bootstrap Facebook Icon -->
-            <a href="https://www.facebook.com" class="social-icon text-white me-3" target="_blank">
-                <i class="bi bi-facebook"></i> <span>Facebook</span>
-            </a>
-            <!-- Bootstrap YouTube Icon -->
-            <a href="https://www.youtube.com" class=" social-icon text-white me-3" target="_blank">
-                <i class="bi bi-youtube"></i> <span>YouTube</span>
-            </a>
-            <!-- Bootstrap Instagram Icon -->
-            <a href="https://instagram.com" class="social-icon text-white" target="_blank">
-                <i class="bi bi-instagram"></i> <span>Instagram</span>
-            </a>            
-        </div>
-          
-          <div>
-              <a href="#privacy" class="text-white me-3">Privacy Policy</a>
-              <a href="#terms" class="text-white">Terms of Service</a>
-          </div>
-      </div>
-  </footer>
-
-<!-- Bootstrap JS (optional) and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-  
-  
-    <!-- Advanced JavaScript for Smooth Rotating Headline and Subtitle -->
-    <script>
-        const messages = [
-            { title: "Compassionate Care, World-Class Expertise", subtitle: "Your Trusted Healthcare Destination in India" },
-            { title: "Redefining Healthcare Excellence", subtitle: "Delivering Quality Care and Innovation in Every Specialty" },
-            { title: "Your Health, Our Priority", subtitle: "India’s Top-Ranked Multi-Specialty Medical Services Provider" },
-            { title: "Healing with Heart and Expertise", subtitle: "Internationally Accredited Healthcare at Your Service" },
-            { title: "Advanced Medical Care for a Healthier Tomorrow", subtitle: "India's Most Trusted Multi-Specialty Medical Provider" },
-            { title: "Empowering Lives with Excellence in Healthcare", subtitle: "Compassionate Care, Specialized Expertise" },
-            { title: "Transforming Lives with Precision and Compassion", subtitle: "Experience World-Class Healthcare Services in India" },
-            { title: "Internationally Accredited, Patient-Focused Care", subtitle: "Delivering Healthcare Excellence in Every Treatment" }
-        ];
-
-        let currentIndex = 0;
-        const titleElement = document.getElementById("hero-title");
-        const subtitleElement = document.getElementById("hero-subtitle");
+        <!-- Testimonials Carousel -->
+        <section id="testimonials" class="py-5 bg-light">
+            <div class="container text-center">
+                <h2 class="section-title mb-4">Testimonials</h2>
+                
+                <!-- Carousel -->
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-item active">
+                            <blockquote class="blockquote">
+                                <p class="mb-4">"Mercy Medical Services provided exceptional care and gave me peace of mind throughout my treatment. I am grateful for their support and expertise."</p>
+                                <footer class="blockquote-footer">Nafees Ahmad</footer>
+                            </blockquote>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item">
+                            <blockquote class="blockquote">
+                                <p class="mb-4">"The doctors and staff at Mercy Medical Services went above and beyond to ensure I was comfortable. Their dedication and expertise are unmatched."</p>
+                                <footer class="blockquote-footer">Sheikh Zafar</footer>
+                            </blockquote>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <blockquote class="blockquote">
+                                <p class="mb-4">"Thanks to Mercy Medical Services, I received the best care possible. I highly recommend them to anyone seeking quality medical attention."</p>
+                                <footer class="blockquote-footer">Zeeshan Khan</footer>
+                            </blockquote>
+                        </div>
+                    </div>
         
-        function showMessage(index) {
-            titleElement.classList.remove("active");
-            subtitleElement.classList.remove("active");
+                    <!-- Carousel controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Address Section -->
+        <section id="contact" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Address Info...</h2>
+                <p>If you have any questions, want to book an appointment, or need more information about our services, please don’t hesitate to reach out.</p>
+                
+                <address class="text-muted fst-italic">
+                    <strong>Mercy Medical Services</strong><br>
+                    New Delhi, India<br>
+                    <abbr title="Phone">Phone:</abbr> +91 9711-0808-02<br>
+                    <a href="mailto:contact@mercymedical.in" class="text-decoration-none text-primary">contact@mercymedical.in</a>
+                </address>            
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5">
+            <div class="form-container">
+                <h2 class="text-center mb-4">Contact Us</h2>
+                <!-- HTML Form -->
+                <form action="/submit-form" method="post">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-4">
+
+            <!-- About Us Section -->
+            <section id="about" class="py-5">
+                <div class="container" align="left">
+                    <h2 class="section-title">About Us</h2>
+                    <p>Mercy Medical Services is a premier healthcare provider in India, offering a full range of medical services to address every aspect of your health. Founded with a vision to deliver compassionate and expert care, we combine state-of-the-art technology, innovative treatments, and patient-focused care to meet the unique needs of every individual.</p>
+                    <ul style="list-style-type: circle;">
+                        <li>Personalized Treatment Plans</li>
+                        <li>Patient-Centered Approach</li>
+                        <li>Advanced Technology</li>
+                        <li>Expert Team</li>
+                        
+                    </ul>
+                </div>
+            </section>
+
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="mb-0">&copy; 2024 Mercy Medical Services. All rights reserved.</p>
+            <div>
+            <!-- Social Media Links -->
+                <!-- Bootstrap Facebook Icon -->
+                <a href="https://www.facebook.com" class="social-icon text-white me-3" target="_blank">
+                    <i class="bi bi-facebook"></i> <span>Facebook</span>
+                </a>
+                <!-- Bootstrap YouTube Icon -->
+                <a href="https://www.youtube.com" class=" social-icon text-white me-3" target="_blank">
+                    <i class="bi bi-youtube"></i> <span>YouTube</span>
+                </a>
+                <!-- Bootstrap Instagram Icon -->
+                <a href="https://instagram.com" class="social-icon text-white" target="_blank">
+                    <i class="bi bi-instagram"></i> <span>Instagram</span>
+                </a>            
+            </div>
             
-            setTimeout(() => {
-                titleElement.textContent = messages[index].title;
-                subtitleElement.textContent = messages[index].subtitle;
-                titleElement.classList.add("active");
-                subtitleElement.classList.add("active");
-            }, 500); // Time to let the fade-out finish before switching text
-        }
+            <div>
+                <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+                <a href="terms.html" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
-        function rotateMessages() {
-            currentIndex = (currentIndex + 1) % messages.length;
+    <!-- Bootstrap JS (optional) and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    
+        <script>
+            //Advanced JavaScript for Smooth Rotating Headline and Subtitle
+
+            const messages = [
+                { title: "Compassionate Care, World-Class Expertise", subtitle: "Your Trusted Healthcare Destination in India" },
+                { title: "Redefining Healthcare Excellence", subtitle: "Delivering Quality Care and Innovation in Every Specialty" },
+                { title: "Your Health, Our Priority", subtitle: "India’s Top-Ranked Multi-Specialty Medical Services Provider" },
+                { title: "Healing with Heart and Expertise", subtitle: "Internationally Accredited Healthcare at Your Service" },
+                { title: "Advanced Medical Care for a Healthier Tomorrow", subtitle: "India's Most Trusted Multi-Specialty Medical Provider" },
+                { title: "Empowering Lives with Excellence in Healthcare", subtitle: "Compassionate Care, Specialized Expertise" },
+                { title: "Transforming Lives with Precision and Compassion", subtitle: "Experience World-Class Healthcare Services in India" },
+                { title: "Internationally Accredited, Patient-Focused Care", subtitle: "Delivering Healthcare Excellence in Every Treatment" }
+            ];
+
+            let currentIndex = 0;
+            const titleElement = document.getElementById("hero-title");
+            const subtitleElement = document.getElementById("hero-subtitle");
+
+            function showMessage(index) {
+                titleElement.classList.remove("active");
+                subtitleElement.classList.remove("active");
+                
+                setTimeout(() => {
+                    titleElement.textContent = messages[index].title;
+                    subtitleElement.textContent = messages[index].subtitle;
+                    titleElement.classList.add("active");
+                    subtitleElement.classList.add("active");
+                }, 500); // Time to let the fade-out finish before switching text
+            }
+
+            function rotateMessages() {
+                currentIndex = (currentIndex + 1) % messages.length;
+                showMessage(currentIndex);
+            }
+
+            // Initial display
             showMessage(currentIndex);
-        }
 
-        // Initial display
-        showMessage(currentIndex);
-        
-        // Set interval for rotating messages
-        setInterval(rotateMessages, 4000); // Change message every 4 seconds
-    </script>
-</body>
+            // Set interval for rotating messages
+            setInterval(rotateMessages, 4000); // Change message every 4 seconds
+
+        </script>
+    </body>
 </html>

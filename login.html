@@ -3,277 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Create Account</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Authentication Pages</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Center the form */
+        /* Center the form container */
         .auth-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-        }
-
-        .auth-form {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff;
-        }
-
-        .auth-form .form-control {
-            margin-bottom: 15px;
-        }
-
-        .auth-form .btn-primary {
-            width: 100%;
-        }
-
-        .toggle-form-link {
-            text-align: center;
-            display: block;
-            margin-top: 10px;
-            cursor: pointer;
-            color: #007bff;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        
-        /* CSS for login using gmail*/
-        .login-container {
-            display: flex;
-            margin-top: -250px;
-            display: block;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-        }
-
-        .login-form {
-            width: 100%;
-            max-width: 400px;
+            max-width: 500px;
+            margin: 120px auto;
             padding: 20px;
+            background-color: #f8f9fa;
             border-radius: 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff;
-            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
-
-        .g-signin2 {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }        
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+        /* Password visibility toggle */
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 35px;
+            cursor: pointer;
+            color: #6c757d;
+        }
+        .form-group {
+            position: relative;
+        }
     </style>
 </head>
-<body>
+<body style="background-color: #6c757d;">
 
     <!-- Header with Navbar -->
     <header class="bg-primary text-white py-3">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand" href="#">Mercy Medical Services</a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
-        
+
+    <!-- Container for Authentication Forms -->
     <div class="auth-container">
+
+        <!-- Success/Error Message -->
+        <div id="message" class="alert d-none"></div>
+
         <!-- Login Form -->
-        <form id="loginForm" class="auth-form">
-            <h3 class="text-center mb-4">User Login</h3>
+        <div id="loginForm" class="auth-form active">
+            <h3 class="text-center mb-4">Login</h3>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility('loginPassword')">&#128065;</span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <p class="text-center mt-3">
+                    <a href="javascript:void(0)" onclick="showForm('forgotPasswordForm')">Forgot password?</a> |
+                    <a href="javascript:void(0)" onclick="showForm('signupForm')">Sign up</a>
+                </p>
+            </form>
+        </div>
 
-            <!-- Username or Email Field -->
-            <div class="form-group">
-                <label for="login-username">Username or Email</label>
-                <input type="text" class="form-control" id="login-username" placeholder="Enter username or email" required>
-            </div>
+        <!-- Signup Form -->
+        <div id="signupForm" class="auth-form">
+            <h3 class="text-center mb-4">Sign Up</h3>
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" class="form-control" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email address</label>
+                    <input type="email" class="form-control" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" class="form-control" id="signupPassword" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility('signupPassword')">&#128065;</span>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="signupConfirmPassword" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility('signupConfirmPassword')">&#128065;</span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                <p class="text-center mt-3">
+                    Already have an account? <a href="javascript:void(0)" onclick="showForm('loginForm')">Login</a>
+                </p>
+            </form>
+        </div>
 
-            <!-- Password Field -->
-            <div class="form-group">
-                <label for="login-password">Password</label>
-                <input type="password" class="form-control" id="login-password" placeholder="Enter password" required>
-            </div>
-
-            <!-- Login Button -->
-            <button type="submit" class="btn btn-primary">Login</button>
-
-            <!-- Error Message -->
-            <div id="login-error-message" class="error-message"></div>
-
-            <!-- Link to Create Account Form -->
-            <span class="toggle-form-link" onclick="toggleForm('registerForm')">Don't have an account? Create one here</span>
-        </form>
-
-        <!-- Register Form -->
-        <form id="registerForm" class="auth-form" style="display: none;">
-            <h3 class="text-center mb-4">Create Account</h3>
-
-            <!-- Username Field -->
-            <div class="form-group">
-                <label for="register-username">Username</label>
-                <input type="text" class="form-control" id="register-username" placeholder="Enter username" required>
-            </div>
-
-            <!-- Email Field -->
-            <div class="form-group">
-                <label for="register-email">Email</label>
-                <input type="email" class="form-control" id="register-email" placeholder="Enter email" required>
-            </div>
-
-            <!-- Password Field -->
-            <div class="form-group">
-                <label for="register-password">Password</label>
-                <input type="password" class="form-control" id="register-password" placeholder="Enter password" required>
-            </div>
-
-            <!-- Confirm Password Field -->
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password" required>
-            </div>
-
-            <!-- Register Button -->
-            <button type="submit" class="btn btn-primary">Create Account</button>
-
-            <!-- Error Message -->
-            <div id="register-error-message" class="error-message"></div>
-
-            <!-- Link to Login Form -->
-            <span class="toggle-form-link" onclick="toggleForm('loginForm')">Already have an account? Log in here</span>
-        </form>
-    </div>
-
-
-    <!-- div for login using gmail -->
-    <div class="login-container">
-        <div class="login-form">
-            <h3 class="text-center mb-4">Login with Google</h3>
-            <!-- Google Sign-In button -->
-            <div id="g_id_onload" 
-                data-client_id="YOUR_CLIENT_ID"   // Replace with your Google Client ID
-                data-context="signin"
-                data-ux_mode="popup"
-                data-callback="handleCredentialResponse"
-                data-auto_prompt="false">
-            </div>
-            <div class="g_id_signin"
-                data-type="standard"
-                data-shape="rectangular"
-                data-theme="outline"
-                data-text="sign_in_with"
-                data-size="large"
-                data-logo_alignment="left">
-            </div>
+        <!-- Forgot Password Form -->
+        <div id="forgotPasswordForm" class="auth-form">
+            <h3 class="text-center mb-4">Forgot Password</h3>
+            <form onsubmit="handleForgotPassword(event)">
+                <div class="form-group">
+                    <label for="forgotEmail">Enter your email</label>
+                    <input type="email" class="form-control" id="forgotEmail" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                <p class="text-center mt-3">
+                    Remembered your password? <a href="javascript:void(0)" onclick="showForm('loginForm')">Login</a>
+                </p>
+            </form>
         </div>
     </div>
-    
-    <!-- Google Platform Library -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    
 
-<!-- JavaScript for form handling and validation -->
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-0">&copy; 2024 Mercy Medical Services. All rights reserved.</p>
+        <div>
+            <a href="privacy.html" class="text-white mr-3">Privacy Policy</a>
+            <a href="terms.html" class="text-white">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript for Form Toggle, Password Toggle, and Validation -->
 <script>
-    function toggleForm(formId) {
-        document.getElementById('loginForm').style.display = formId === 'loginForm' ? 'block' : 'none';
-        document.getElementById('registerForm').style.display = formId === 'registerForm' ? 'block' : 'none';
+    function showForm(formId) {
+        document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
+        document.getElementById(formId).classList.add('active');
     }
 
-    // Handle Login Form Submission
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('login-username').value;
-        const password = document.getElementById('login-password').value;
-        const errorMessage = document.getElementById('login-error-message');
-
-        if (username === '' || password === '') {
-            errorMessage.textContent = 'Please enter both username and password.';
-            return;
-        }
-
-        // Simulate a successful login (replace with actual authentication logic)
-        if (username === 'testuser' && password === 'password123') {
-            alert('Login successful!');
-            window.location.href = 'dashboard.html';
-        } else {
-            errorMessage.textContent = 'Invalid username or password.';
-        }
-    });
-
-    // Handle Register Form Submission
-    document.getElementById('registerForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('register-username').value;
-        const email = document.getElementById('register-email').value;
-        const password = document.getElementById('register-password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-        const errorMessage = document.getElementById('register-error-message');
-
-        if (username === '' || email === '' || password === '' || confirmPassword === '') {
-            errorMessage.textContent = 'Please fill in all fields.';
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            errorMessage.textContent = 'Passwords do not match.';
-            return;
-        }
-
-        // Simulate successful registration (replace with backend request)
-        alert('Account created successfully!');
-        toggleForm('loginForm'); // Switch to login form after registration
-    });
-
-
-
-// Login Using google gmail API code.
-    function handleCredentialResponse(response) {
-        // Parse JWT Token
-        const responsePayload = parseJwt(response.credential);
-        
-        // Display user info or handle sign-in logic
-        alert(`Welcome, ${responsePayload.name}!`);
-        
-        // Redirect to dashboard or any page
-        window.location.href = "dashboard.html"; // Example redirect
+    function togglePasswordVisibility(inputId) {
+        const input = document.getElementById(inputId);
+        input.type = input.type === 'password' ? 'text' : 'password';
     }
 
-    // Parse the JWT token to extract user information
-    function parseJwt(token) {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
+    function displayMessage(type, message) {
+        const messageDiv = document.getElementById('message');
+        messageDiv.className = `alert alert-${type}`;
+        messageDiv.textContent = message;
+        messageDiv.classList.remove('d-none');
+    }
 
-        return JSON.parse(jsonPayload);
-    }    
+    function handleLogin(event) {
+        event.preventDefault();
+        displayMessage('success', 'Login successful!');
+    }
+
+    function handleSignup(event) {
+        event.preventDefault();
+        displayMessage('success', 'Signup successful!');
+    }
+
+    function handleForgotPassword(event) {
+        event.preventDefault();
+        displayMessage('info', 'Password reset link sent!');
+    }
 </script>
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 </html>
