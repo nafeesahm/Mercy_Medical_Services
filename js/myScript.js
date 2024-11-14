@@ -1,5 +1,5 @@
     // Text to display
-    const text = "Mercy Medical Services";
+    const text = "Welcome to Mercy Medical Services";
     let index = 0;
 
     function showText() {
