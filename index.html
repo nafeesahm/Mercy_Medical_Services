@@ -13,9 +13,19 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
         <title>Mercy Medical Services</title>
         <style>
-            body {
-            background-image: url('/img/background_image.jpeg');
+            #form_bg {
+            background-image: url('/img/mercy_bg.jpg');
             background-position: top; /* Optional: Centers the background image */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            }
+
+            body {
+            background-image: url('/img/Bg_Gif.gif');
+            background-position: top; /* Optional: Centers the background image */
+            background-size: cover;
+            background-position: center;
             }
 
         </style>  
@@ -26,25 +36,25 @@
         <!-- Header with Navbar -->
         <header class="bg-primary text-white py-3">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <nav class="navbar navbar-expand-lg navbar-toggler bg-light fixed-top">
                     <img src="./img/Logo.jpg" id="logo">
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <!-- Search Box in Navbar -->
-                        <form class="d-flex ms-auto">
-                            <input class="form-control me-2" type="search" id="goto-search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <ul class="navbar-nav ms-auto">
+                        <ul class="navbar-nav ms-2">
                             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                             <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
                         </ul>
+                        <!-- Search Box in Navbar -->
+                        <form class="d-flex ms-auto">
+                            <input class="form-control me-2" type="search" id="goto-search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                     </div>
                 </nav>
             </div>
@@ -53,7 +63,7 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section bg-light text-center py-5">
             <div class="container">
-                <h1 class="display-6"><div id="assistant-text" class="navbar-brand"/></div></h1>
+                <h1 class="display-6">Mercy Medical Services</h1>
                 <p class="lead" id="hero-title">Compassionate Care, World-Class Expertise</p>
                 <p id="hero-subtitle">Your Trusted Healthcare Destination in India</p>
                 <a href="#services" class="btn btn-primary btn-lg mt-3">Explore Our Services</a>
@@ -62,8 +72,12 @@
 
         <!-- Main Content Section -->
         <main class="container my-5" style="color: whitesmoke;">
-            <h1>Mercy Medical Services</h1>
-            <p>Your Health, Our Priority</p>
+            <h1 class="display-7"><div id="assistant-text" class="navbar-brand"/></div></h1>
+            <p>
+                <div id="heartbeatText" class="heartbeat-text">
+                Your Health, Our Priority
+                </div>
+            </p>
     
             <!-- carousel with three slides -->
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -165,8 +179,8 @@
             </div>
         </section>
 
-        <div class="container bg-dark py-5">
-            <div class="row row-cols-1 row-cols-md-2 g-4" style="width: auto;">
+        <div class="container-fluid bg-dark py-5">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col">
                     <div class="card">
                         <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
@@ -281,6 +295,7 @@
             </div>
         </section>
 
+        <div id="form_bg">
         <!-- Contact Section -->
         <section id="contact" class="py-5">
             <div class="form-container">
@@ -316,6 +331,7 @@
                 </form>
             </div>
         </section>
+        </div>
 
     <!-- Footer Section -->
     <footer class="bg-dark text-white text-center py-4">
